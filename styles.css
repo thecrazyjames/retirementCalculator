@@ -5,15 +5,26 @@
   }
   
   .column {
-    flex: 2;
+    flex: 1;
     color: black;
+    text-align: center;
     justify-content: right;
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 2em;
-    justify-content: space-around;
+    padding: 1em;
+    flex-direction: column;
+    flex-grow: 2;
+    align-items: stretch;
+    height:max-content;
   }
 
-.iraScript{
+.iraScript, li{
     font-size: 0.5em;
-    
+    align-items: stretch;
+}
+
+span {
+    font-size: 1.5em;
+    font-weight: 200;
+    font-style: oblique;
 }
