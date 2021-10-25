@@ -187,3 +187,11 @@ fieldset {
   background-color:lightblue;
   color: white;
 }
+
+input{
+  border: none;
+  background-color: whitesmoke;
+  font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 1em;
+}
+

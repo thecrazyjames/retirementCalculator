@@ -68,10 +68,6 @@
       
     </div>
 
-    <p id="demo">Click the button to change the text in this paragraph.</p>
-
-    <button onclick="myFunction()">Try it</button>
-
     <script>
 
     function calculateRetirement() {
@@ -83,14 +79,9 @@
       retirementAmount = retirementAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
       document.getElementById('totalRetirement').innerHTML = "Total required Retirement amount: $"+retirementAmount;
+      
     }
 
-
-    //document.getElementById('totalRetirement').innerHTML = "changing text";
-
-    function myFunction() {
-        document.getElementById("demo").innerHTML = "Hello World";
-      }
     </script>
 
 </body>
