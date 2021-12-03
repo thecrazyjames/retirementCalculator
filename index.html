@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="script" href="script.js"> -->
+    <title>Retirement Calculator</title>
+</head>
+<body>
+  
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="News.html">News</a>
+    <a href="Contact.html">Contact</a>
+    <a href="About.html">About</a>
+  </div>
+
+
+    <h1>Retirement Calculator</h1>
+    <p>Planning for your future...</p>
+
+    <div class="container">
+        <div class="column" style="background: whitesmoke">
+          <h2>401k</h2>
+          <p class="iraScript">
+              <ul>
+                  <li>A 401(k) plan is a company-sponsored retirement account that employees can contribute to. Employers may also make matching contributions.
+                  <li>There are two basic types of 401(k)s—traditional and Roth—which differ primarily in how they're taxed. In a traditional 401(k), employee contributions are "pre-tax." That is, the money is deducted from gross income and no taxes are due on it until the money is withdrawn. With a Roth, employees pay the income taxes up front but can make withdrawals tax-free.</li>
+                  <li>For 2020, under the CARES Act, the withdrawal rules were relaxed for those affected by the COVID-19 pandemic, and RMDs were suspended.</li>
+              </ul>
+          </p>
+        </div> 
+        
+        <div class="column" style="background: lightblue">
+          <h2>Roth</h2>
+          <p class="iraScript">an individual retirement account allowing a person to set aside after-tax income up to a specified amount each year. Both earnings on the account and withdrawals after age 59½ are tax-free.</p>
+        </div>
+        
+        <div class="column" style="background: gray">
+          <h2>Simple</h2>
+          <p class="iraScript">A SIMPLE IRA is a retirement savings plan that most small businesses with 100 or fewer employees can use. "SIMPLE" stands for "Savings Incentive Match Plan for Employees," and "IRA" stands for "Individual Retirement Account." Employers can choose to make a non-elective contribution of 2% of the employee's salary or a dollar-for-dollar matching contribution of the employee's contributions to the plan up to 3% of their salary.</p>
+        </div>
+      </div>
+
+    <div class="container">
+    <div class="column" style="background: whitesmoke">
+        <h2>Calculator (Work in progress)</h2>
+        <p class="retirementCalculator">
+            I'm <span class="currentAge">21</span> years old and I plan to retire at age <span class="retirementAge">67</span>. I make <span class="currentSalary">$35,000</span> a year and save <span class="annualSavings">$0</span> (<span class="annualPercentSavings">0.0%</span> of my income) annually for retirement. I've already saved <span class="totalCurrentSavings">$0</span> for retirement and I think I'll need <span class="percentCurrentIncome">85.0%</span> of my current income in retirement. I expect an annual return of <span class="annualPercentReturn"> 5.0% </span> from my retirement savings.
+        </p>
+    </div> 
+    
+    </div>
+
+    <div class="container">
+      <div class="column" style="background: whitesmoke">
+          <h2>How much do I need to retire??</h2>
+          <p class="totalRetirement">
+          Calculate the total amount you need to save in order to receive the same annual salary you receive today.
+          </p>
+          <p>The calculator takes your current salary, subtracts $33,000 dollars for the amount you would recieve in retirement, and divides that total amount by 0.04 to represent the average 4% per year you would take from retirement.</p>
+          <p>Desired Retirement Salary: $<input id="currentSalary"  type="number" min="1" max="10000000" value="45000"  onchange="calculateRetirement()"</p>
+          <p>Annual Social Security: $ <input id="socialSec" type="number" min="0" max="50000" value="30000" step="1000" onchange="calculateRetirement()"</p>   </p>
+          <h2 id="totalRetirement">Total required Retirement amount:</h2>
+      </div> 
+      
+    </div>
+
+    <script>
+
+    function calculateRetirement() {
+      var salary = document.getElementById('currentSalary').value;
+      var socSec = document.getElementById('socialSec').value;
+
+      var retirementAmount = (salary - socSec)/0.04;
+
+      retirementAmount = retirementAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      document.getElementById('totalRetirement').innerHTML = "Total required Retirement amount: $"+retirementAmount;
+      
+    }
+
+    </script>
+
+</body>
+</html>
